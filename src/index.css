@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@theme {
+  --color-p: rgb(255, 187, 0);
+  --color-bg: #111827;
+}
+@layer components {
+  .button-p {
+    @apply bg-yellow-400 text-white font-bold py-1 px-4 rounded cursor-pointer select-none;
+    &:hover {
+      @apply bg-yellow-500;
+    }
+  }
+  .input-p {
+    @apply bg-gray-800 text-white border border-gray-600 rounded py-1 px-2 focus:outline-none focus:border-yellow-400;
+  }
+}
+
+body {
+  background-color: #111827;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+/* 自定义滚动条样式 - 隐藏轨道，橙色拖动条 */
+.custom-scrollbar {
+  /* 标准属性 - 隐藏轨道 */
+  scrollbar-width: thin; /* Firefox 中设为 thin 以显示小滚动条 */
+  scrollbar-color: rgb(255, 187, 0) transparent; /* 拖动条颜色为橙色，轨道为透明 */
+}
+
+/* WebKit 浏览器 (Chrome, Safari, Edge) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* 垂直滚动条宽度 */
+  height: 8px; /* 水平滚动条高度 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* 隐藏轨道 */
+  margin: 4px; /* 给拖动条留出边距 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 187, 0); /* 橙色拖动条 */
+  border-radius: 4px; /* 圆角 */
+  border: 2px solid transparent; /* 透明边框，用于创建轨道间隙效果 */
+  background-clip: content-box; /* 重要：确保颜色只在内容区域显示 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(255, 165, 0); /* 悬停时稍微深一点的橙色 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background: transparent; /* 滚动条角落透明 */
+}
