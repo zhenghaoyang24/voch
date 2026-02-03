@@ -22,13 +22,11 @@ function App() {
   );
 
   useEffect(() => {
-    if (loaded) {
-      setBooksMap(dataMaps.booksMap);
-      setBookVocsMap(dataMaps.bookWordMap);
-      setVocabularyMap(dataMaps.vocabularyMap);
-      setSpellingMap(dataMaps.spellingMap);
-      setExamplesMap(dataMaps.examplesMap);
-    }
+    setBooksMap(dataMaps.booksMap);
+    setBookVocsMap(dataMaps.bookWordMap);
+    setVocabularyMap(dataMaps.vocabularyMap);
+    setSpellingMap(dataMaps.spellingMap);
+    setExamplesMap(dataMaps.examplesMap);
   }, [
     progress,
     dataMaps,
@@ -37,13 +35,12 @@ function App() {
     setSpellingMap,
     setExamplesMap,
     setBookVocsMap,
-    loaded,
   ]);
 
   return (
     <>
       {!loaded ? (
-        <Loading />
+        <Loading progress={progress} />
       ) : (
         <>
           <Navbar />
